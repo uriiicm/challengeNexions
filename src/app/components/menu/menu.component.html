@@ -1,0 +1,14 @@
+
+<nav>
+    <ul>
+        <span>{{usuario | userPipe}}</span>
+        <div>
+            <li><a routerLink="/">Inicio  </a></li>
+            <li *ngIf="perfil==='client'"><a routerLink="/client/forms">Formularios  </a></li>
+            <li *ngIf="perfil==='client'"><a routerLink="/client/formsList">Mis formularios</a></li>
+            <li *ngIf="perfil==='admin'"><a routerLink="/admin/forms">Formularios  </a></li>
+            <li><a (click)="closeSession();">Salir </a></li>
+        </div>
+      
+    </ul>
+</nav>

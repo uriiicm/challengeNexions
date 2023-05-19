@@ -1,0 +1,13 @@
+<div class="container">
+  <form class="form_login" [formGroup]="loginForm">
+      <span>Login</span>
+      
+      <input formControlName="email" #email  placeholder="Email" appValidateInput [ngClass]="{'is-invalid':loginForm.get('email')?.errors?.invalidEmail}">
+      <input type="password" formControlName="password" placeholder="Contraseña">
+      <button (click)="onSubmit()" [disabled]="!loginForm.valid">Entrar</button>
+      <!-- myForm.get('type')?.value=='catalog'  -->
+      <div class="messageError"  *ngIf="loginForm.get('email')?.errors?.invalidEmail">
+        Correo inválido
+      </div>
+  </form>
+</div>

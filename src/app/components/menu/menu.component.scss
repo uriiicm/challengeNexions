@@ -1,0 +1,50 @@
+@import '../../recursos';
+
+nav{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: $color-principal;
+    color: white;
+    box-shadow: -1px 4px 5px 0px rgba(0,0,0,0.6);
+    -webkit-box-shadow: -1px 4px 5px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: -1px 4px 5px 0px rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0px;
+    ul{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0px 50px;
+        font-family: 'Carlito', sans-serif;
+        font-weight: 300;
+        span{
+            display: flex;
+            width: 30%;
+        }
+        div{
+            display: flex;
+            width: 70%;
+            justify-content: flex-end;
+            li{
+                list-style: none;
+                background-color: lighten($color-principal,0.5);
+                margin-left: 10px;
+    
+                a{
+                    text-decoration: none;
+                    padding: 10px 10px;
+                    color: white;
+                }
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    nav ul {
+        padding:0px 0px;
+    }
+}

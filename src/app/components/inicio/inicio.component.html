@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>CHALLENGE NEXIONS</h1>
+    <div *ngIf="perfil=='admin'">
+        <p >
+            Este usuario tiene asignado el perfil de <b>{{perfil | uppercase}}</b>, el cual tiene permisos para dar de alta <a routerLink="/admin/forms">Formularios  </a>
+        
+        </p>
+        <p>En dicha sección podras dar de alta formularios, registrando la siguiente información:</p>
+            <ul>
+                <li>
+                    Nombre del formulario
+                </li>
+                <li>
+                    Clave
+                </li>
+                <li>
+                    Campos
+                    <ul>
+                        <li>Label </li>
+                        <li>Tipo de campo </li>
+                    </ul>
+                </li>
+            </ul>
+    </div>
+    <div *ngIf="perfil==='client'">
+        <p >
+            Este usuario tiene asignado el perfil de <b>{{perfil | uppercase}}</b>, el cual tiene permisos para consultar todos los <a routerLink="/client/forms">Formularios</a> existentes y así poder responder el que necesite.
+        </p>
+        <p >
+            Este usuario tambien tiene disponible la sección de <a routerLink="/client/formsList">Mis Formularios</a> en donde podrá visualizar los formularios que ha llenado.
+        </p>
+        <p>
+            Las dos secciones cuentan con un buscador que le permitira al usuario filtrar los formularios por medio de su cláve.
+        </p>
+    </div>
+    <div class="info">
+        <p>Es esta aplicación se utilizó lazy loading y se optó por hacer uso del módulo PreloadAllModules ya que considero que son pocos componentes los que se cargan en cada módulo, tomando en cuenta esto... pienso que podría ser de gran ayuda el tener precargadas ya las rutas para cuando el usuario las necesite.</p>
+        <p>Si la aplicación fuera más grande, lo más probable es que hubiera optado por QuicklinkStrategy ya que no sería bueno precargar todas las rutas, si no cargar solo las asociadas a la página en la que se encuentre el usuario , para así poder gestionar mejor la memoria de la aplicaciíon y no saturar la red.</p>
+    </div>
+
+</div>

@@ -1,0 +1,33 @@
+@import '../../recursos';
+.snackbar-container{
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: auto;
+    height: 40px;
+    border-radius: 12px;
+    z-index: 200;
+    padding:15px;
+    font-family: 'Carlito', sans-serif;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 1px 14px 28px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 14px 28px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 14px 28px 0px rgba(0,0,0,0.75);
+
+    img{
+        margin-right: 5px;
+    }
+}
+
+.success{
+    background: rgb(1, 155, 1);
+    color: white;
+    font-weight: bolder;
+}
+.error{
+    background: rgb(216, 40, 9);
+    color: white;
+    font-weight: bolder;
+}

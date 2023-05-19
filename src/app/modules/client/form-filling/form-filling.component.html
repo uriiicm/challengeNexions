@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>{{form.name}}</h1>
+    <form *ngIf="formLoaded" [formGroup]="formQuestion">
+        <div *ngFor="let element of form.questions">
+            <div class="question">
+                <label for="">{{element.label}}</label>
+                <div [ngSwitch]="element.type">
+                    <div *ngSwitchCase="'text'">
+                        <input type="text" required formControlName="{{element.idQuestion|lowercase}}">
+                    </div>
+                    <div *ngSwitchCase="'number'">
+                        <input type="number" required formControlName="{{element.idQuestion|lowercase}}">
+                    </div>
+                    <div *ngSwitchCase="'file'">
+                        <input type="file" required formControlName="{{element.idQuestion|lowercase}}"  (change)="onFileSelected($event)">
+                    </div>
+                    <div *ngSwitchCase="'date'">
+                        <input type="datetime-local" required formControlName="{{element.idQuestion|lowercase}}">
+                    </div>
+                    <div *ngSwitchCase="'catalog'">
+                        <select required formControlName="{{element.idQuestion|lowercase}}">
+                            <option *ngFor="let option of element.options" [value]="option">{{ option }}</option>
+                        </select>
+                    </div>
+                   
+                  </div>
+            </div>
+        </div>
+        <button [disabled]="!formQuestion.valid" (click)="sendForm()">Enviar</button>
+    </form>
+</div>

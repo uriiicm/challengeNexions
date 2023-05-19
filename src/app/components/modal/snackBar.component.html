@@ -1,0 +1,5 @@
+<div class="snackbar-container" *ngIf="visible" [ngClass]="{'success':dataSnackBar?.type=='success','error':dataSnackBar?.type=='error'}">
+  <img src="../../../assets/iconerror.png" alt="iconError" height="30px" *ngIf="dataSnackBar?.type=='error'">
+  <img src="../../../assets/iconsuccess.png" alt="iconError" height="30px" *ngIf="dataSnackBar?.type=='success'"> 
+  {{dataSnackBar?.message}}
+</div>

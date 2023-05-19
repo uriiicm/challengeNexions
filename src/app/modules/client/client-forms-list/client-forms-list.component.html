@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Formularios Resueltos</h2>
+    <div class="searchForm">
+        <input type="text" [(ngModel)]="letters" placeholder="Busca un formulario por su cláve" (input)="filterForms($event)">
+    </div>
+
+    <div *ngFor="let form of formList">
+        <app-card [element]="form.form" [text]="'Abrir'" (datosEnviados)="recibirDatos($event)" ></app-card>
+    </div>
+</div>
+
+
+<div class="containerModal" [ngStyle]="verModal?{display:'flex'}:{display:'none'}">
+    <div class="modal">
+        <div class="modal-header">
+            <h2>{{dataModal?.name}}</h2>
+        </div>
+        <div class="modal-body">
+            <div class="element" *ngFor="let campo of dataModal?.elements">
+                <label>{{campo.label}}</label>
+                <span>{{campo.value}}</span>
+            </div>
+        </div>
+        <div class="modal-bottom">
+                <button (click)="cerrarModal();">Cerrar</button>
+        </div>
+    </div>
+</div>

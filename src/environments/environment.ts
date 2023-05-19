@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  criptoKey:'apple2023',
+  apiUser:'http://localhost:3000/users',
+  apiMenuSections:'http://localhost:3000/menuSections',
+  apiForms:'http://localhost:3000/forms',
+  apiFilledForms:'http://localhost:3000/completeForm',
+  // apiForms:'https://pokeapi.co/api/v2/pokemon/ditto'
 };
 
 /*

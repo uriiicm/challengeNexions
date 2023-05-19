@@ -1,0 +1,65 @@
+.container{
+    display: flex;
+    padding: 0px 4rem;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    font-family: 'Carlito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    h1{
+
+        margin-bottom: 60px;
+        font-weight: bolder;
+        
+    }
+        .question{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 50px;
+            font-size:1.3rem;
+            input,select{
+                width: 50%;
+                height: 35px;
+                border: none;
+                border-radius: 5px;
+                background: white;
+                padding: 0px 10px;
+                font-size:1rem;
+                &:focus{
+                    border-color: red!important;
+                }
+            }
+            label{
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                padding: 5px;
+                font-weight: bolder;
+
+            }
+        }
+        form{
+            button{
+                border-style: none;
+                padding: 15px 20px;
+                border-radius: 5px;
+                background: rgb(255, 217, 0);
+                font-weight: bolder;
+                &{
+                    cursor: pointer;
+                }
+
+            }
+        }
+    
+}
+
+@media only screen and (max-width: 450px) {
+    .container{
+        padding:0px 20px;
+        justify-content: center;
+        
+    }
+}

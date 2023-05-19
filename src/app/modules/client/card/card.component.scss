@@ -1,0 +1,39 @@
+@import '../../../_recursos';
+.formElement{
+    display: flex;
+    width: 160px;
+    height: 120px;
+    margin-top: 50px;
+    padding: 10px;
+    justify-content: center;
+    background:white;
+    margin-right: 20px;
+    border-radius: 10px;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(221, 218, 218);
+    span{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    span:nth-child(2)label{
+       font-weight: bold;
+       margin-right: 5px;
+       color: $color-principal;
+    }
+    button{
+        border-style: none;
+        padding: 10px 10px;
+        margin-top: 10px;
+        background: lighten($color-secundario,40%);
+        border-radius: 5px;
+        background: $color-terciario;
+        color:black;
+        font-weight: bolder;
+        &:hover{
+            cursor: pointer;
+            background: darken($color:$color-terciario, $amount: 10%);
+        }
+    }
+}

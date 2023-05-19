@@ -1,0 +1,61 @@
+<div class="container">
+    <h2>Registro Formulario</h2>
+
+    <div class="container-sections">
+        <div>
+            <div class="row">
+                <Label>Nombre Formulario</Label>
+                <input class="inputForm" type="text" [(ngModel)]="nombreForm" >
+
+            </div>
+            <div class="row">
+                <Label>Clave</Label>
+                <input class="inputForm" type="text" [(ngModel)]="clave" >
+
+            </div>
+          <span>Añade tus campos</span>
+            <form [formGroup]="myForm">
+
+                <div class="row">
+                    <label for="label">Label</label>  
+                    <input type="text" id="label" formControlName="label">
+                </div>
+                <div class="row">
+                    <label for="type">Tipo de campo</label>
+                    <select formControlName="type">
+                        <option value="text" default>Texto</option>
+                        <option value="number">Numérico</option>
+                        <option value="catalog">Select</option>
+                        <option value="file">File</option>
+                        <option value="date">Date Time</option>
+                    </select>
+                </div>
+                <div *ngIf="myForm.get('type')?.value=='catalog'">
+                    <div class="row">
+                        <label for="label">Opcion 1</label>  
+                        <input type="text" id="opc1" formControlName="option1">
+                    </div>
+                    <div class="row">
+                        <label for="label">Opcion 2</label>  
+                        <input type="text" id="opc2" formControlName="option2">
+                    </div>
+                    <div class="row">
+                        <label for="label">Opcion 3</label>  
+                        <input type="text" id="opc3" formControlName="option3">
+                    </div>
+                </div>
+                
+                <button (click)="addQuestion();" [disabled]="!myForm.valid || (myForm.get('type')?.value=='catalog' && (myForm.get('option1')?.value==''|| myForm.get('option2')?.value=='' || myForm.get('option3')?.value==''))">Añadir</button>
+            </form>
+
+            <span>Campos agregados:</span>
+            <ul *ngFor="let question of questionsList">
+                <li>{{question.label}}</li>
+            </ul>
+
+            <button id="guardaForm" (click)="guardaForm();" [disabled]="nombreForm=='' || clave=='' || questionsList.length==0">Guardar Formulario</button>
+        </div>
+    </div>
+   
+</div>
+

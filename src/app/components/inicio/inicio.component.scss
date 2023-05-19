@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    padding: 0px 4rem;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    font-family: 'Carlito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    h1{
+        margin-bottom: 50px;
+    }
+
+    font-size: 1rem;
+    ul{
+        margin:10px 10px;
+    }
+
+    .info{
+        margin-top: 20px;
+        border-radius: 30px;
+        padding: 30px;
+        background: rgb(251, 251, 239);
+    }
+}
